@@ -18,9 +18,12 @@ public class Main extends Activity {
             public void run() {
                 try {
                     Thread.sleep(2000);
-                    runOnUiThread(() -> {
-                        startActivity(new Intent(Main.this, NativeActivity.class));
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run(){
+                         startActivity(new Intent(Main.this, NativeActivity.class));
                         finish();
+                        }
                     });
                 } catch (InterruptedException e) {
                     e.printStackTrace();
