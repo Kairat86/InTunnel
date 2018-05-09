@@ -32,6 +32,11 @@ android {
             minifyEnabled = true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.zhet
+            applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "InTunnel.apk"
+                }
+            }
         }
     }
     externalNativeBuild {
